@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white">
+
+    <!-- Panel atas: navy background dengan logo -->
+    <LinearLayout
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/navy_primary"
+        android:paddingTop="64dp"
+        android:paddingBottom="48dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/layout_bottom"
+        app:layout_constraintHeight_percent="0.50">
+
+        <!-- Logo icon -->
+        <ImageView
+            android:id="@+id/iv_onboarding_logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_launcher"
+            android:contentDescription="Logo UTSAD" />
+
+        <!-- App Name -->
+        <TextView
+            android:id="@+id/tv_onboarding_app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MONTRACE"
+            android:textColor="@color/text_white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+
+    <!-- Panel bawah: konten tagline + button -->
+    <LinearLayout
+        android:id="@+id/layout_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:paddingTop="40dp"
+        android:paddingBottom="40dp"
+        android:background="@color/bg_white"
+        app:layout_constraintTop_toBottomOf="@+id/layout_top"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Tagline utama -->
+        <TextView
+            android:id="@+id/tv_tagline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="One Place For\nYour Money Flow."
+            android:textColor="@color/text_primary"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:lineSpacingMultiplier="1.2" />
+
+        <!-- Subtitle -->
+        <TextView
+            android:id="@+id/tv_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Log your income and expenses, simply and consistently."
+            android:textColor="@color/text_secondary"
+            android:textSize="15sp"
+            android:layout_marginTop="12dp"
+            android:lineSpacingMultiplier="1.4" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Tombol Next → intent ke MainActivity -->
+        <Button
+            android:id="@+id/btn_next"
+            style="@style/Widget.UTSAD.Button.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/btn_next" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
