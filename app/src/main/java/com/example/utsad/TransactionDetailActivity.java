@@ -12,10 +12,16 @@ public class TransactionDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        // Make activity draw under system bars
+        androidx.core.view.WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+        // Make status bar transparent so root background shows through
+        getWindow().setStatusBarColor(android.graphics.Color.TRANSPARENT);
+        
         setContentView(R.layout.activity_transaction_detail);
 
-        // Apply status bar padding
-        MainActivity.applyStatusBarInset(findViewById(android.R.id.content));
+        // Apply status bar padding to the root view
+        MainActivity.applyStatusBarInset(findViewById(R.id.root_detail));
 
         ImageView ivBack = findViewById(R.id.iv_back);
         TextView tvCategory = findViewById(R.id.tv_detail_category);

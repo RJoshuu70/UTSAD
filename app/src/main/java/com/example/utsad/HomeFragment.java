@@ -150,14 +150,13 @@ public class HomeFragment extends Fragment {
                 if (isExpensesActive) {
                     popupMenu.getMenu().add("Food");
                     popupMenu.getMenu().add("Transportation");
-                    popupMenu.getMenu().add("Entertainment");
-                    popupMenu.getMenu().add("Bills");
-                    popupMenu.getMenu().add("Others");
+                    popupMenu.getMenu().add("Shopping");
+                    popupMenu.getMenu().add("Education");
+                    popupMenu.getMenu().add("Telephone");
                 } else {
                     popupMenu.getMenu().add("Salary");
-                    popupMenu.getMenu().add("Business");
-                    popupMenu.getMenu().add("Investment");
-                    popupMenu.getMenu().add("Others");
+                    popupMenu.getMenu().add("Refunds");
+                    popupMenu.getMenu().add("Awards");
                 }
 
                 popupMenu.setOnMenuItemClickListener(item -> {
