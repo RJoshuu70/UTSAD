@@ -10,7 +10,8 @@
     <color name="sys_purple_50">#F5EEFE</color>
 
     <!-- Purple 100 – secondary backgrounds, dividers, badge fills    -->
-    <color name="sys_purple_100">#DDD6F7</color>
+    <color name="sys_purple_100">#E2DAF5</color>
+
 
     <!-- Purple 200 – source indicator dots, icon tints, light accents-->
     <color name="sys_purple_200">#A3B1E2</color>
@@ -61,10 +62,14 @@
     <color name="toggle_inactive">@color/sys_purple_50</color>
 
     <!-- Chart Colors (Overview) -->
-    <color name="chart_awards">#6C63FF</color>
-    <color name="chart_salary">@color/sys_navy_500</color>
+    <color name="chart_awards">#3F4775</color>
+    <color name="chart_salary">#26A69A</color>
     <color name="chart_food">#F44336</color>
-    <color name="chart_transport">#FF9800</color>
+    <color name="chart_transport">#F44336</color>
+
+    <!-- Dot Indicators -->
+    <color name="dot_green">#4CAF50</color>
+    <color name="dot_red">#F44336</color>
 
     <!-- Misc -->
     <color name="transparent">#00000000</color>
