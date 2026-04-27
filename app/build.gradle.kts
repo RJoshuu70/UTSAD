@@ -43,6 +43,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata:2.9.0")
     implementation("androidx.fragment:fragment:1.8.8")
     implementation("androidx.core:core:1.16.0")
+    implementation("androidx.core:core-splashscreen:1.0.1")
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
     implementation(libs.appcompat)
     implementation(libs.material)

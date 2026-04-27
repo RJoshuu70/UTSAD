@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.splashscreen.SplashScreen;
 
 public class SplashActivity extends AppCompatActivity {
     private static final long SPLASH_DELAY_MS = 2000L;
@@ -13,6 +14,9 @@ public class SplashActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Install SplashScreen API sebelum super.onCreate
+        SplashScreen.installSplashScreen(this);
+        
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
