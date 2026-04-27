@@ -41,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
      */
     private void applyStatusBarInset() {
         FrameLayout container = findViewById(R.id.fragment_container);
+        applyStatusBarInset(container);
+    }
+
+    public static void applyStatusBarInset(android.view.View container) {
         ViewCompat.setOnApplyWindowInsetsListener(container, (v, insets) -> {
             int statusBarHeight = insets.getInsets(WindowInsetsCompat.Type.statusBars()).top;
             v.setPadding(

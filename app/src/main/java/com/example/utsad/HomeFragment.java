@@ -68,10 +68,28 @@ public class HomeFragment extends Fragment {
         if (item1 != null) {
             View moreBtn1 = item1.findViewById(R.id.iv_more_home);
             if (moreBtn1 != null) moreBtn1.setOnClickListener(v -> showTransactionMenu(v));
+            
+            // Add intent click listener for item 1
+            item1.setOnClickListener(v -> {
+                android.content.Intent intent = new android.content.Intent(requireContext(), TransactionDetailActivity.class);
+                intent.putExtra("CATEGORY", "Food");
+                intent.putExtra("AMOUNT", "-Rp20.000,00");
+                intent.putExtra("SOURCE", "Cash");
+                startActivity(intent);
+            });
         }
         if (item2 != null) {
             View moreBtn2 = item2.findViewById(R.id.iv_more_home);
             if (moreBtn2 != null) moreBtn2.setOnClickListener(v -> showTransactionMenu(v));
+            
+            // Add intent click listener for item 2
+            item2.setOnClickListener(v -> {
+                android.content.Intent intent = new android.content.Intent(requireContext(), TransactionDetailActivity.class);
+                intent.putExtra("CATEGORY", "Transportation");
+                intent.putExtra("AMOUNT", "-Rp10.000,00");
+                intent.putExtra("SOURCE", "E-Wallet");
+                startActivity(intent);
+            });
         }
 
         setupToggle();
