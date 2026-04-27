@@ -11,7 +11,8 @@
         <item name="android:colorBackground">@color/bg_cream</item>
         <item name="android:windowBackground">@color/bg_cream</item>
         <item name="android:statusBarColor">@color/navy_dark</item>
-        <item name="android:navigationBarColor">@color/bg_cream</item>
+        <item name="android:navigationBarColor">#3F4775</item>
+        <item name="android:windowLightNavigationBar">false</item>
     </style>
 
     <!-- Splash Screen Theme: fullscreen navy background -->

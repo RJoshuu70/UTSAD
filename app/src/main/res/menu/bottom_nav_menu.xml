@@ -2,30 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_home"
-        android:icon="@drawable/ic_home"
+        android:icon="@drawable/ic_nav_home"
         android:title="@string/nav_home" />
 
     <item
         android:id="@+id/nav_transaction"
-        android:icon="@drawable/ic_transaction"
+        android:icon="@drawable/ic_nav_transaction"
         android:title="@string/nav_transaction" />
-
-    <!-- Item tengah (FAB placeholder - tidak digunakan sebagai nav item) -->
-    <item
-        android:id="@+id/nav_empty"
-        android:icon="@drawable/ic_home"
-        android:title=""
-        android:enabled="false"
-        android:visible="false"/>
 
     <item
         android:id="@+id/nav_overview"
-        android:icon="@drawable/ic_overview"
+        android:icon="@drawable/ic_nav_overview"
         android:title="@string/nav_overview" />
 
     <item
         android:id="@+id/nav_about"
-        android:icon="@drawable/ic_about"
+        android:icon="@drawable/ic_nav_about"
         android:title="@string/nav_about" />
 
 </menu>

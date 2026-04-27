@@ -7,12 +7,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigation;
-    private FloatingActionButton fabAdd;
 
     private HomeFragment homeFragment;
     private TransactionFragment transactionFragment;
@@ -30,12 +28,10 @@ public class MainActivity extends AppCompatActivity {
         initViews();
         initFragments();
         setupBottomNavigation();
-        setupFab();
     }
 
     private void initViews() {
         bottomNavigation = findViewById(R.id.bottom_navigation);
-        fabAdd = findViewById(R.id.fab_add);
     }
 
     private void initFragments() {
@@ -88,14 +84,5 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
             activeFragment = targetFragment;
         }
-    }
-
-    private void setupFab() {
-        fabAdd.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, AddTransactionActivity.class);
-            // Mengirim data konteks via Intent extras
-            intent.putExtra(AddTransactionActivity.EXTRA_SOURCE, "FAB_HOME");
-            startActivity(intent);
-        });
     }
 }
