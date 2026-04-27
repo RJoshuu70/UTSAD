@@ -8,7 +8,10 @@ MONTRACE is a premium finance tracking application designed to help users manage
 - **Transaction Management**: Easily toggle between Income and Expense categories.
 - **Interactive Dropdowns**: Dynamic category selection based on transaction type.
 - **Onboarding Flow**: Beautifully designed splash and onboarding screens to welcome users.
-- **Custom Navigation**: A sleek, bottom navigation bar tailored to the design aesthetic.
+- **Transaction Redesign**: Premium lavender cards with navy borders, source indicators, and overflow menus.
+- **Interactive Actions**: Popup menus for editing and deleting transactions directly from the list.
+- **Custom Navigation**: A sleek, navy bottom navigation bar with rounded top corners and labeled icons.
+- **Unified Headers**: Consistent navy header bars with centered titles across all screens.
 
 ## 🛠️ Built With
 

@@ -22,7 +22,7 @@
             android:background="@color/sys_navy_500"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
-            android:paddingTop="40dp"
+            android:paddingTop="20dp"
             android:paddingBottom="20dp">
 
             <!-- Logo / Placeholder foto profil -->

@@ -62,8 +62,31 @@ public class HomeFragment extends Fragment {
         if (tvAmount2 != null) tvAmount2.setText("-Rp10.000,00");
         if (tvSource2 != null) tvSource2.setText("E-Wallet");
 
+        // Popup menu for 3-dot buttons on transaction items
+        View item1 = view.findViewById(R.id.item_transaction_1);
+        View item2 = view.findViewById(R.id.item_transaction_2);
+        if (item1 != null) {
+            View moreBtn1 = item1.findViewById(R.id.iv_more_home);
+            if (moreBtn1 != null) moreBtn1.setOnClickListener(v -> showTransactionMenu(v));
+        }
+        if (item2 != null) {
+            View moreBtn2 = item2.findViewById(R.id.iv_more_home);
+            if (moreBtn2 != null) moreBtn2.setOnClickListener(v -> showTransactionMenu(v));
+        }
+
         setupToggle();
         setupDropdown();
+    }
+
+    private void showTransactionMenu(View anchor) {
+        PopupMenu popup = new PopupMenu(requireContext(), anchor);
+        popup.getMenu().add(0, 1, 0, "Edit");
+        popup.getMenu().add(0, 2, 1, "Delete");
+        popup.setOnMenuItemClickListener(item -> {
+            // TODO: wire up real edit/delete logic
+            return true;
+        });
+        popup.show();
     }
 
     private void setupToggle() {

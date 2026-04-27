@@ -7,33 +7,43 @@
     android:orientation="vertical"
     android:background="@color/bg_cream">
 
-    <!-- Header -->
+    <!-- Header: Navy Bar with Centered Title -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sys_navy_500"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="24dp">
+
+        <TextView
+            android:id="@+id/tv_title_transaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="TRANSACTION"
+            android:textColor="@color/text_white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.1" />
+    </RelativeLayout>
+
+    <!-- Filters Section -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
-        android:paddingTop="40dp"
-        android:paddingBottom="16dp">
-
-        <!-- Judul halaman -->
-        <TextView
-            android:id="@+id/tv_title_transaction"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TRANSACTION"
-            android:textColor="@color/text_primary"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:letterSpacing="0.1" />
+        android:paddingTop="16dp"
+        android:paddingBottom="12dp">
 
         <!-- Filter bulan dan kategori -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="12dp">
+            android:orientation="horizontal">
 
             <!-- Filter: Month -->
             <RelativeLayout
@@ -123,43 +133,68 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_transaction_card"
-                android:padding="14dp"
-                android:layout_marginBottom="8dp">
+                android:padding="16dp"
+                android:layout_marginBottom="12dp">
 
-                <LinearLayout
-                    android:id="@+id/layout_trx1_info"
+                <!-- Title (Top Left) -->
+                <TextView
+                    android:id="@+id/tv_trx1_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true">
+                    android:text="Food"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Food"
-                        android:textColor="@color/text_primary"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
+                <!-- More Button (Top Right) -->
+                <ImageView
+                    android:id="@+id/btn_more_1"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_more"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:contentDescription="More options"
+                    android:background="?attr/selectableItemBackgroundBorderless" />
+
+                <!-- Source with Indicator (Bottom Left) -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_below="@id/tv_trx1_title"
+                    android:layout_marginTop="8dp"
+                    android:layout_alignParentStart="true">
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:background="@drawable/bg_source_indicator"
+                        android:layout_marginEnd="6dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Cash"
                         android:textColor="@color/text_secondary"
-                        android:textSize="12sp"
-                        android:layout_marginTop="2dp" />
+                        android:textSize="13sp" />
                 </LinearLayout>
 
+                <!-- Amount (Bottom Right) -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
                     android:text="-Rp20.000,00"
                     android:textColor="@color/expense_red"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@id/btn_more_1"
+                    android:layout_marginTop="8dp" />
             </RelativeLayout>
 
             <!-- Item: Transportation (Expense) -->
@@ -167,42 +202,68 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_transaction_card"
-                android:padding="14dp"
+                android:padding="16dp"
                 android:layout_marginBottom="16dp">
 
+                <!-- Title (Top Left) -->
+                <TextView
+                    android:id="@+id/tv_trx2_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Transportation"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+                <!-- More Button (Top Right) -->
+                <ImageView
+                    android:id="@+id/btn_more_2"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_more"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:contentDescription="More options"
+                    android:background="?attr/selectableItemBackgroundBorderless" />
+
+                <!-- Source with Indicator (Bottom Left) -->
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true">
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_below="@id/tv_trx2_title"
+                    android:layout_marginTop="8dp"
+                    android:layout_alignParentStart="true">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Transportation"
-                        android:textColor="@color/text_primary"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:background="@drawable/bg_source_indicator"
+                        android:layout_marginEnd="6dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="E-Wallet"
                         android:textColor="@color/text_secondary"
-                        android:textSize="12sp"
-                        android:layout_marginTop="2dp" />
+                        android:textSize="13sp" />
                 </LinearLayout>
 
+                <!-- Amount (Bottom Right) -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
                     android:text="-Rp10.000,00"
                     android:textColor="@color/expense_red"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@id/btn_more_2"
+                    android:layout_marginTop="8dp" />
             </RelativeLayout>
 
             <!-- Group: 21 April 2026 -->
@@ -219,42 +280,68 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_transaction_card"
-                android:padding="14dp"
-                android:layout_marginBottom="8dp">
+                android:padding="16dp"
+                android:layout_marginBottom="12dp">
 
+                <!-- Title (Top Left) -->
+                <TextView
+                    android:id="@+id/tv_trx3_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Food"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+                <!-- More Button (Top Right) -->
+                <ImageView
+                    android:id="@+id/btn_more_3"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_more"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:contentDescription="More options"
+                    android:background="?attr/selectableItemBackgroundBorderless" />
+
+                <!-- Source with Indicator (Bottom Left) -->
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true">
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_below="@id/tv_trx3_title"
+                    android:layout_marginTop="8dp"
+                    android:layout_alignParentStart="true">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Food"
-                        android:textColor="@color/text_primary"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:background="@drawable/bg_source_indicator"
+                        android:layout_marginEnd="6dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="E-Wallet"
                         android:textColor="@color/text_secondary"
-                        android:textSize="12sp"
-                        android:layout_marginTop="2dp" />
+                        android:textSize="13sp" />
                 </LinearLayout>
 
+                <!-- Amount (Bottom Right) -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
                     android:text="-Rp50.000,00"
                     android:textColor="@color/expense_red"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@id/btn_more_3"
+                    android:layout_marginTop="8dp" />
             </RelativeLayout>
 
             <!-- Item: Awards (Income) -->
@@ -262,42 +349,68 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_transaction_card"
-                android:padding="14dp"
-                android:layout_marginBottom="8dp">
+                android:padding="16dp"
+                android:layout_marginBottom="12dp">
 
+                <!-- Title (Top Left) -->
+                <TextView
+                    android:id="@+id/tv_trx4_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Awards"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+                <!-- More Button (Top Right) -->
+                <ImageView
+                    android:id="@+id/btn_more_4"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_more"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:contentDescription="More options"
+                    android:background="?attr/selectableItemBackgroundBorderless" />
+
+                <!-- Source with Indicator (Bottom Left) -->
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true">
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_below="@id/tv_trx4_title"
+                    android:layout_marginTop="8dp"
+                    android:layout_alignParentStart="true">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Awards"
-                        android:textColor="@color/text_primary"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:background="@drawable/bg_source_indicator"
+                        android:layout_marginEnd="6dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="E-Wallet"
                         android:textColor="@color/text_secondary"
-                        android:textSize="12sp"
-                        android:layout_marginTop="2dp" />
+                        android:textSize="13sp" />
                 </LinearLayout>
 
+                <!-- Amount (Bottom Right) -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
                     android:text="+Rp500.000,00"
                     android:textColor="@color/income_green"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@id/btn_more_4"
+                    android:layout_marginTop="8dp" />
             </RelativeLayout>
 
             <!-- Item: Salary (Income) -->
@@ -305,42 +418,68 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_transaction_card"
-                android:padding="14dp"
-                android:layout_marginBottom="8dp">
+                android:padding="16dp"
+                android:layout_marginBottom="12dp">
 
+                <!-- Title (Top Left) -->
+                <TextView
+                    android:id="@+id/tv_trx5_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Salary"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+                <!-- More Button (Top Right) -->
+                <ImageView
+                    android:id="@+id/btn_more_5"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_more"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:contentDescription="More options"
+                    android:background="?attr/selectableItemBackgroundBorderless" />
+
+                <!-- Source with Indicator (Bottom Left) -->
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true">
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_below="@id/tv_trx5_title"
+                    android:layout_marginTop="8dp"
+                    android:layout_alignParentStart="true">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Salary"
-                        android:textColor="@color/text_primary"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:background="@drawable/bg_source_indicator"
+                        android:layout_marginEnd="6dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Cash"
                         android:textColor="@color/text_secondary"
-                        android:textSize="12sp"
-                        android:layout_marginTop="2dp" />
+                        android:textSize="13sp" />
                 </LinearLayout>
 
+                <!-- Amount (Bottom Right) -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
                     android:text="+Rp400.000,00"
                     android:textColor="@color/income_green"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@id/btn_more_5"
+                    android:layout_marginTop="8dp" />
             </RelativeLayout>
 
             <!-- Bottom padding -->

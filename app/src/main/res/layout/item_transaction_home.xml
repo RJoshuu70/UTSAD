@@ -23,19 +23,17 @@
             android:textSize="15sp"
             android:textStyle="bold" />
 
-        <!-- Ikon 3 titik (kebab menu) menggunakan karakter Unicode -->
-        <TextView
-            android:id="@+id/tv_more_options"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <!-- Ikon 3 titik (kebab menu) -->
+        <ImageView
+            android:id="@+id/iv_more_home"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_more"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:text="•••"
-            android:textColor="@color/text_primary"
-            android:textSize="16sp"
-            android:letterSpacing="0.15"
             android:clickable="true"
             android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Opsi Transaksi" />
     </RelativeLayout>
 
