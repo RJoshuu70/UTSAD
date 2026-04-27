@@ -25,7 +25,7 @@
     <!-- SplashScreen API Theme (Android 12+) -->
     <style name="Theme.UTSAD.Starting" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/navy_primary</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/logo</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_logo</item>
         <item name="postSplashScreenTheme">@style/Theme.UTSAD.Splash</item>
     </style>
 

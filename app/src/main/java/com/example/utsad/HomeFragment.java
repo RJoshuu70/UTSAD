@@ -5,7 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.PopupMenu;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -16,6 +18,8 @@ public class HomeFragment extends Fragment {
 
     private Button btnIncome;
     private Button btnExpenses;
+    private RelativeLayout dropdownCategory;
+    private TextView tvCategoryHint;
 
     @Nullable
     @Override
@@ -31,6 +35,8 @@ public class HomeFragment extends Fragment {
         // Inisialisasi referensi view
         btnIncome = view.findViewById(R.id.btn_income);
         btnExpenses = view.findViewById(R.id.btn_expenses);
+        dropdownCategory = view.findViewById(R.id.dropdown_category);
+        tvCategoryHint = view.findViewById(R.id.tv_category_hint);
 
         // Data dummy: tampilkan transaksi pertama (Food, Expense)
         TextView tvCategory1 = view.findViewById(R.id.item_transaction_1)
@@ -57,6 +63,7 @@ public class HomeFragment extends Fragment {
         if (tvSource2 != null) tvSource2.setText("E-Wallet");
 
         setupToggle();
+        setupDropdown();
     }
 
     private void setupToggle() {
@@ -76,6 +83,12 @@ public class HomeFragment extends Fragment {
     }
 
     private void updateToggleUI() {
+        // Reset category hint when toggling
+        if (tvCategoryHint != null) {
+            tvCategoryHint.setText("Category");
+            tvCategoryHint.setTextColor(getResources().getColor(R.color.text_hint, null));
+        }
+
         if (isExpensesActive) {
             btnExpenses.setBackgroundResource(R.drawable.bg_toggle_active);
             btnExpenses.setTextColor(getResources().getColor(R.color.text_white, null));
@@ -86,6 +99,36 @@ public class HomeFragment extends Fragment {
             btnIncome.setTextColor(getResources().getColor(R.color.text_white, null));
             btnExpenses.setBackgroundResource(R.drawable.bg_toggle_inactive);
             btnExpenses.setTextColor(getResources().getColor(R.color.text_secondary, null));
+        }
+    }
+
+    private void setupDropdown() {
+        if (dropdownCategory != null) {
+            dropdownCategory.setOnClickListener(v -> {
+                PopupMenu popupMenu = new PopupMenu(requireContext(), dropdownCategory);
+                if (isExpensesActive) {
+                    popupMenu.getMenu().add("Food");
+                    popupMenu.getMenu().add("Transportation");
+                    popupMenu.getMenu().add("Entertainment");
+                    popupMenu.getMenu().add("Bills");
+                    popupMenu.getMenu().add("Others");
+                } else {
+                    popupMenu.getMenu().add("Salary");
+                    popupMenu.getMenu().add("Business");
+                    popupMenu.getMenu().add("Investment");
+                    popupMenu.getMenu().add("Others");
+                }
+
+                popupMenu.setOnMenuItemClickListener(item -> {
+                    if (tvCategoryHint != null) {
+                        tvCategoryHint.setText(item.getTitle());
+                        tvCategoryHint.setTextColor(getResources().getColor(R.color.text_primary, null));
+                    }
+                    return true;
+                });
+
+                popupMenu.show();
+            });
         }
     }
 }

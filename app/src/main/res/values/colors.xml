@@ -1,13 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="navy_primary">#3B3F72</color>
-    <color name="navy_dark">#2A2D52</color>
-    <color name="navy_light">#4E5498</color>
 
-    <!-- Background -->
-    <color name="bg_cream">#F5F0E8</color>
+    <!-- ============================================================ -->
+    <!-- DESIGN SYSTEM — Primary Palette                              -->
+    <!-- Use these tokens for consistent colors across all pages.     -->
+    <!-- ============================================================ -->
+
+    <!-- Purple 50 – card backgrounds, form card, dropdowns           -->
+    <color name="sys_purple_50">#F5EEFE</color>
+
+    <!-- Purple 100 – secondary backgrounds, dividers, badge fills    -->
+    <color name="sys_purple_100">#DDD6F7</color>
+
+    <!-- Purple 200 – source indicator dots, icon tints, light accents-->
+    <color name="sys_purple_200">#A3B1E2</color>
+
+    <!-- Navy 500 – header bar, active toggle, Save button            -->
+    <color name="sys_navy_500">#3F4775</color>
+
+    <!-- Navy 900 – primary text, TOTAL AMOUNT heading, bottom nav    -->
+    <color name="sys_navy_900">#26265C</color>
+
+    <!-- ============================================================ -->
+    <!-- SEMANTIC ALIASES — use these in layouts (not hex directly)   -->
+    <!-- ============================================================ -->
+
+    <!-- Backgrounds -->
+    <color name="bg_page">@color/bg_white</color>
+    <color name="bg_cream">@color/bg_page</color>
+    <color name="bg_card">@color/sys_purple_50</color>
     <color name="bg_white">#FFFFFF</color>
-    <color name="bg_card">#EDE8F5</color>
+
+    <!-- Navigation -->
+    <color name="navy_primary">@color/sys_navy_500</color>
+    <color name="navy_dark">@color/sys_navy_900</color>
+    <color name="navy_light">@color/sys_purple_200</color>
+
+    <!-- Borders / Strokes -->
+    <color name="border_card">@color/sys_navy_900</color>
+    <color name="border_input">@color/sys_purple_100</color>
+    <color name="divider">@color/sys_purple_100</color>
 
     <!-- Transaction Colors -->
     <color name="income_green">#4CAF50</color>
@@ -16,26 +48,26 @@
     <color name="income_green_light">#E8F5E9</color>
 
     <!-- Text Colors -->
-    <color name="text_primary">#1A1A2E</color>
-    <color name="text_secondary">#6B6F8A</color>
+    <color name="text_primary">@color/sys_navy_900</color>
+    <color name="text_secondary">@color/sys_navy_500</color>
     <color name="text_white">#FFFFFF</color>
-    <color name="text_hint">#A0A3B1</color>
+    <color name="text_hint">@color/sys_purple_200</color>
 
     <!-- UI Elements -->
-    <color name="divider">#E8E4F0</color>
-    <color name="bottom_nav_selected">#3B3F72</color>
-    <color name="bottom_nav_unselected">#A0A3B1</color>
-    <color name="button_primary">#3B3F72</color>
-    <color name="toggle_active">#3B3F72</color>
-    <color name="toggle_inactive">#D0CDE1</color>
+    <color name="bottom_nav_selected">@color/sys_navy_900</color>
+    <color name="bottom_nav_unselected">@color/sys_purple_200</color>
+    <color name="button_primary">@color/sys_navy_500</color>
+    <color name="toggle_active">@color/sys_navy_500</color>
+    <color name="toggle_inactive">@color/sys_purple_50</color>
 
     <!-- Chart Colors (Overview) -->
     <color name="chart_awards">#6C63FF</color>
-    <color name="chart_salary">#3B3F72</color>
+    <color name="chart_salary">@color/sys_navy_500</color>
     <color name="chart_food">#F44336</color>
     <color name="chart_transport">#FF9800</color>
 
-    <!-- Transparent -->
+    <!-- Misc -->
     <color name="transparent">#00000000</color>
     <color name="overlay_dark">#80000000</color>
+
 </resources>

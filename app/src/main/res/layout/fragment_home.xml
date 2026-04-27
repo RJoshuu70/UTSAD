@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_cream"
+    android:background="@color/bg_white"
     android:fillViewport="true">
 
     <LinearLayout
@@ -12,27 +12,29 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Header -->
+        <!-- ===================================================== -->
+        <!-- Header: Logo + Tanggal                                 -->
+        <!-- ===================================================== -->
         <RelativeLayout
             android:id="@+id/layout_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/navy_primary"
+            android:background="@color/sys_navy_500"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
             android:paddingTop="40dp"
             android:paddingBottom="20dp">
 
-            <!-- Placeholder foto profil (ImageView) -->
+            <!-- Logo / Placeholder foto profil -->
             <ImageView
                 android:id="@+id/iv_profile_placeholder"
                 android:layout_width="44dp"
                 android:layout_height="44dp"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:background="@drawable/bg_circle_expense"
-                android:contentDescription="Foto Profil"
-                android:scaleType="centerCrop" />
+                android:src="@drawable/logo_notext"
+                android:contentDescription="Logo Aplikasi"
+                android:scaleType="fitCenter" />
 
             <!-- Tanggal di kanan -->
             <TextView
@@ -45,38 +47,48 @@
                 android:textColor="@color/text_white"
                 android:textSize="14sp"
                 android:gravity="end"
+                android:textStyle="bold"
                 android:lineSpacingMultiplier="1.2" />
         </RelativeLayout>
 
-        <!-- Total Amount Section -->
+        <!-- ===================================================== -->
+        <!-- Total Amount Section                                   -->
+        <!-- ===================================================== -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center_horizontal"
-            android:paddingTop="24dp"
-            android:paddingBottom="16dp"
-            android:background="@color/bg_cream">
+            android:paddingTop="28dp"
+            android:paddingBottom="20dp"
+            android:background="@color/bg_white">
 
-            <!-- Label Total Amount -->
+            <!-- Label -->
             <TextView
                 android:id="@+id/tv_label_total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TOTAL AMOUNT"
-                style="@style/TextAppearance.UTSAD.SectionTitle" />
+                android:textColor="@color/sys_navy_900"
+                android:textSize="12sp"
+                android:letterSpacing="0.1"
+                android:textStyle="bold" />
 
-            <!-- Nilai total saldo -->
+            <!-- Nilai Total Saldo -->
             <TextView
                 android:id="@+id/tv_total_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rp. 820.000,00"
-                style="@style/TextAppearance.UTSAD.AmountLarge"
-                android:layout_marginTop="4dp" />
+                android:textColor="@color/sys_navy_900"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:layout_marginTop="6dp" />
         </LinearLayout>
 
-        <!-- Card Form: Toggle + Input -->
+        <!-- ===================================================== -->
+        <!-- Card Form: Toggle (Income/Expenses) + Input Fields    -->
+        <!-- ===================================================== -->
         <LinearLayout
             android:id="@+id/card_form"
             android:layout_width="match_parent"
@@ -87,7 +99,7 @@
             android:layout_marginEnd="16dp"
             android:padding="20dp">
 
-            <!-- Toggle: Income/Expenses -->
+            <!-- Toggle: INCOME / EXPENSES -->
             <LinearLayout
                 android:id="@+id/layout_toggle"
                 android:layout_width="match_parent"
@@ -104,7 +116,7 @@
                     android:text="INCOME"
                     android:textSize="12sp"
                     android:textAllCaps="true"
-                    android:textColor="@color/text_secondary"
+                    android:textColor="@color/sys_navy_900"
                     android:background="@drawable/bg_toggle_inactive"
                     android:fontFamily="sans-serif-medium" />
 
@@ -121,7 +133,7 @@
                     android:fontFamily="sans-serif-medium" />
             </LinearLayout>
 
-            <!-- Dropdown: Category -->
+            <!-- Dropdown: Category (dengan chevron) -->
             <RelativeLayout
                 android:id="@+id/dropdown_category"
                 android:layout_width="match_parent"
@@ -129,7 +141,9 @@
                 android:background="@drawable/bg_input_field"
                 android:layout_marginTop="12dp"
                 android:paddingStart="16dp"
-                android:paddingEnd="16dp">
+                android:paddingEnd="16dp"
+                android:clickable="true"
+                android:focusable="true">
 
                 <TextView
                     android:id="@+id/tv_category_hint"
@@ -140,16 +154,17 @@
                     android:textColor="@color/text_hint"
                     android:textSize="15sp" />
 
+                <!-- Chevron icon -->
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/ic_dropdown"
-                    android:contentDescription="Dropdown" />
+                    android:contentDescription="Pilih Kategori" />
             </RelativeLayout>
 
-            <!-- Input: Amount -->
+            <!-- Input: Amount (teks biasa, bukan dropdown) -->
             <RelativeLayout
                 android:id="@+id/field_amount"
                 android:layout_width="match_parent"
@@ -173,9 +188,9 @@
                     android:maxLines="1" />
             </RelativeLayout>
 
-            <!-- Dropdown: Source -->
+            <!-- Input: Source (teks biasa, bukan dropdown — sesuai Figma) -->
             <RelativeLayout
-                android:id="@+id/dropdown_source"
+                android:id="@+id/field_source"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:background="@drawable/bg_input_field"
@@ -183,45 +198,48 @@
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp">
 
-                <TextView
-                    android:id="@+id/tv_source_hint"
-                    android:layout_width="wrap_content"
+                <EditText
+                    android:id="@+id/et_source"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="Source"
-                    android:textColor="@color/text_hint"
-                    android:textSize="15sp" />
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/ic_dropdown"
-                    android:contentDescription="Dropdown" />
+                    android:hint="Source"
+                    android:textColorHint="@color/text_hint"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp"
+                    android:inputType="text"
+                    android:background="@null"
+                    android:maxLines="1" />
             </RelativeLayout>
 
             <!-- Tombol Save -->
             <Button
                 android:id="@+id/btn_save_home"
-                style="@style/Widget.UTSAD.Button.Primary"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:text="Save"
-                android:layout_marginTop="16dp" />
+                android:textColor="@color/text_white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:backgroundTint="@color/sys_navy_500"
+                android:layout_marginTop="16dp"
+                android:stateListAnimator="@null"
+                app:cornerRadius="12dp" />
         </LinearLayout>
 
-        <!-- Transaksi Terbaru -->
+        <!-- ===================================================== -->
+        <!-- Recent Transactions                                    -->
+        <!-- ===================================================== -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:paddingTop="20dp"
+            android:paddingTop="24dp"
             android:paddingBottom="16dp">
 
-            <!-- Header: label + View All -->
+            <!-- Header row: Label + View All -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -232,7 +250,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:text="Recent Transaction"
-                    android:textColor="@color/navy_primary"
+                    android:textColor="@color/sys_navy_900"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -242,28 +260,29 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:text="View All"
-                    android:textColor="@color/text_secondary"
+                    android:textColor="@color/sys_navy_500"
                     android:textSize="13sp" />
             </RelativeLayout>
 
-            <!-- Transaksi Item 1: Food (Expense) -->
+            <!-- Item Transaksi 1 -->
             <include layout="@layout/item_transaction_home"
                 android:id="@+id/item_transaction_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp" />
 
-            <!-- Transaksi Item 2: Transportation (Expense) -->
+            <!-- Item Transaksi 2 -->
             <include layout="@layout/item_transaction_home"
                 android:id="@+id/item_transaction_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
-        <!-- Bottom padding agar tidak tertutup FAB -->
+        <!-- Bottom padding agar tidak tertutup Bottom Nav -->
         <Space
             android:layout_width="match_parent"
             android:layout_height="80dp" />
+
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>

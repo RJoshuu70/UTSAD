@@ -1,62 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
     android:background="@drawable/bg_transaction_card"
     android:padding="14dp">
 
-    <!-- Icon lingkaran (expense = merah, income = hijau) -->
-    <FrameLayout
-        android:id="@+id/frame_icon"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/bg_circle_expense">
-
-        <ImageView
-            android:id="@+id/iv_type_icon"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_arrow_down"
-            android:contentDescription="Tipe transaksi" />
-    </FrameLayout>
-
-    <!-- Info: Kategori dan Source -->
-    <LinearLayout
-        android:id="@+id/layout_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_toEndOf="@id/frame_icon"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="12dp">
+    <!-- Baris atas: Nama Kategori (kiri) + Icon 3-dots (kanan) -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/tv_category_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
             android:text="Food"
             android:textColor="@color/text_primary"
             android:textSize="15sp"
             android:textStyle="bold" />
 
-        <!-- Source (Cash / E-Wallet) dengan warna indicator -->
+        <!-- Ikon 3 titik (kebab menu) menggunakan karakter Unicode -->
+        <TextView
+            android:id="@+id/tv_more_options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="•••"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:letterSpacing="0.15"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Opsi Transaksi" />
+    </RelativeLayout>
+
+    <!-- Baris bawah: Indikator warna + Sumber (kiri) + Jumlah (kanan) -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp">
+
+        <!-- Indikator kotak kecil berwarna + teks Sumber -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:layout_marginTop="2dp">
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true">
 
+            <!-- Kotak kecil warna sys_purple_200 (#A3B1E2) -->
             <View
                 android:id="@+id/view_source_color"
                 android:layout_width="12dp"
                 android:layout_height="12dp"
-                android:background="@drawable/bg_circle_expense" />
+                android:background="@drawable/bg_source_indicator" />
 
+            <!-- Nama Sumber Pembayaran (Cash / E-Wallet) -->
             <TextView
                 android:id="@+id/tv_source"
                 android:layout_width="wrap_content"
@@ -66,17 +71,18 @@
                 android:textSize="12sp"
                 android:layout_marginStart="6dp" />
         </LinearLayout>
-    </LinearLayout>
 
-    <!-- Jumlah transaksi (merah untuk expense) -->
-    <TextView
-        android:id="@+id/tv_amount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:text="-Rp20.000,00"
-        android:textColor="@color/expense_red"
-        android:textSize="14sp"
-        android:textStyle="bold" />
-</RelativeLayout>
+        <!-- Jumlah transaksi (merah untuk expense, hijau untuk income) -->
+        <TextView
+            android:id="@+id/tv_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="-Rp20.000,00"
+            android:textColor="@color/expense_red"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</LinearLayout>
